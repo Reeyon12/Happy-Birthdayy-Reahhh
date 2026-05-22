@@ -14,8 +14,6 @@
 
 :root{
   --accent:#ff2d55;
-  --glass:rgba(255,255,255,0.08);
-  --border:rgba(255,255,255,0.12);
 }
 
 *{
@@ -42,8 +40,6 @@ body{
 
 }
 
-/* MAIN PHONE SCREEN */
-
 .phone{
 
   width:100vw;
@@ -57,15 +53,13 @@ body{
 
   overflow:hidden;
 
-  border-radius:30px;
+  border-radius:28px;
 
   background:black;
 
   box-shadow:0 0 40px rgba(255,255,255,0.15);
 
 }
-
-/* PAGES */
 
 .page{
 
@@ -115,19 +109,17 @@ body{
 
   width:100%;
 
-  background:rgba(0,0,0,0.22);
+  background:rgba(0,0,0,0.2);
 
-  backdrop-filter:blur(10px);
-
-  border:1px solid rgba(255,255,255,0.08);
+  backdrop-filter:blur(8px);
 
   border-radius:28px;
 
   padding:28px;
 
-}
+  border:1px solid rgba(255,255,255,0.08);
 
-/* TITLES */
+}
 
 .hero-title{
 
@@ -137,7 +129,7 @@ body{
 
   line-height:1.1;
 
-  margin-bottom:16px;
+  margin-bottom:14px;
 
   background:linear-gradient(to right,#fff,#ff5f7a,#fff);
 
@@ -153,25 +145,11 @@ body{
 
   letter-spacing:3px;
 
+  margin-bottom:28px;
+
   opacity:0.8;
 
-  margin-bottom:32px;
-
 }
-
-.step-text{
-
-  font-size:28px;
-
-  line-height:1.5;
-
-  margin-bottom:24px;
-
-  font-family:'Playfair Display',serif;
-
-}
-
-/* BUTTON */
 
 .btn{
 
@@ -185,11 +163,11 @@ body{
 
   color:white;
 
+  font-size:15px;
+
   font-weight:700;
 
   cursor:pointer;
-
-  font-size:15px;
 
   transition:0.3s;
 
@@ -201,39 +179,50 @@ body{
   transform:scale(1.05);
 }
 
-/* HEARTS */
+.photo-group{
 
-.heart{
+  display:flex;
 
-  position:absolute;
+  gap:12px;
 
-  bottom:-20px;
+  justify-content:center;
 
-  animation:float 6s linear forwards;
-
-  opacity:0.7;
+  margin-bottom:20px;
 
 }
 
-@keyframes float{
+.photo-group img{
 
-  0%{
-    transform:translateY(0) scale(0);
-    opacity:0;
-  }
+  width:120px;
+  height:240px;
 
-  20%{
-    opacity:0.8;
-  }
+  object-fit:cover;
 
-  100%{
-    transform:translateY(-120vh) scale(1.5);
-    opacity:0;
-  }
+  border-radius:18px;
+
+  box-shadow:0 0 20px rgba(255,255,255,0.15);
 
 }
 
-/* FAIRY LIGHTS */
+.step-text{
+
+  font-size:26px;
+
+  line-height:1.6;
+
+  margin-bottom:22px;
+
+  font-family:'Playfair Display',serif;
+
+}
+
+.message{
+
+  font-size:17px;
+
+  line-height:1.9;
+
+}
 
 .lights{
 
@@ -247,7 +236,7 @@ body{
 
   justify-content:space-around;
 
-  padding:14px;
+  padding:15px;
 
   z-index:2;
 
@@ -271,7 +260,7 @@ body{
 @keyframes flicker{
 
   from{
-    opacity:0.7;
+    opacity:0.6;
   }
 
   to{
@@ -280,77 +269,39 @@ body{
 
 }
 
-/* IMAGE */
+.heart{
 
-.photo-group{
+  position:absolute;
 
-  display:flex;
+  bottom:-20px;
 
-  gap:12px;
-
-  justify-content:center;
-
-  margin-bottom:20px;
+  animation:float 6s linear forwards;
 
 }
 
-.photo-group img{
+@keyframes float{
 
-  width:120px;
-  height:240px;
+  0%{
+    transform:translateY(0) scale(0);
+    opacity:0;
+  }
 
-  object-fit:cover;
+  20%{
+    opacity:0.8;
+  }
 
-  border-radius:20px;
-
-  box-shadow:0 0 20px rgba(255,255,255,0.15);
-
-}
-
-/* MESSAGE */
-
-.message{
-
-  font-size:17px;
-
-  line-height:1.9;
-
-  color:#f5f5f5;
+  100%{
+    transform:translateY(-120vh) scale(1.5);
+    opacity:0;
+  }
 
 }
-
-/* GALLERY */
-
-.gallery{
-
-  display:grid;
-
-  grid-template-columns:1fr 1fr;
-
-  gap:14px;
-
-  margin-top:22px;
-
-}
-
-.gallery img{
-
-  width:100%;
-  height:210px;
-
-  object-fit:cover;
-
-  border-radius:18px;
-
-}
-
-/* CAKE */
 
 .cake{
 
   width:220px;
 
-  margin-top:22px;
+  margin-top:20px;
 
   animation:bounce 3s infinite;
 
@@ -378,13 +329,11 @@ body{
 
 <!-- MUSIC -->
 
-<audio id="music" loop>
+<audio id="music" loop preload="auto">
 
-<source src="PUT-MUSIC-LINK-HERE" type="audio/mp3">
+<source src="PUT-YOUR-MP3-LINK-HERE" type="audio/mpeg">
 
 </audio>
-
-<!-- FLOATING HEARTS -->
 
 <div id="hearts"></div>
 
@@ -394,7 +343,7 @@ body{
 
 style="
 background-image:
-linear-gradient(rgba(0,0,0,0.15),rgba(0,0,0,0.4)),
+linear-gradient(rgba(0,0,0,0.15),rgba(0,0,0,0.45)),
 url('https://media.discordapp.net/attachments/1507124665871503452/1507148738546634852/download.jpg');
 ">
 
@@ -417,7 +366,7 @@ Happy Birthday Reah 🎂
 </h1>
 
 <p class="hero-sub">
-A LITTLE WEBSITE JUST FOR YOU
+THIS WEBSITE IS FOR YOU
 </p>
 
 <button class="btn" onclick="nextPage(1)">
@@ -485,7 +434,7 @@ still one of my favorite people.
 </p>
 
 <button class="btn" onclick="nextPage(3)">
-Let's Decorate 🎈
+Decorate 🎈
 </button>
 
 </div>
@@ -498,7 +447,7 @@ Let's Decorate 🎈
 
 style="
 background-image:
-linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.55)),
+linear-gradient(rgba(0,0,0,0.15),rgba(0,0,0,0.45)),
 url('https://cdn.discordapp.com/attachments/1507124665871503452/1507151199822938232/download_6.jpg');
 ">
 
@@ -517,10 +466,10 @@ url('https://cdn.discordapp.com/attachments/1507124665871503452/1507151199822938
 <div class="content">
 
 <p class="step-text">
-turn on the music 🎵
+tap below for music 🎵
 </p>
 
-<button class="btn" onclick="playMusicAndNext()">
+<button class="btn" onclick="startMusic()">
 Play Music
 </button>
 
@@ -534,7 +483,7 @@ Play Music
 
 style="
 background-image:
-linear-gradient(rgba(0,0,0,0.15),rgba(0,0,0,0.4)),
+linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.4)),
 url('https://cdn.discordapp.com/attachments/1507124665871503452/1507150139796754482/download_3.jpg');
 ">
 
@@ -582,11 +531,25 @@ pages[page].classList.add("active");
 
 }
 
-function playMusicAndNext(){
+function startMusic(){
 
-document.getElementById("music").play();
+const music=document.getElementById("music");
+
+music.volume=1;
+
+music.play()
+.then(()=>{
 
 nextPage(4);
+
+})
+.catch((err)=>{
+
+alert("Music could not play. Use a direct MP3 link.");
+
+console.log(err);
+
+});
 
 }
 
@@ -618,5 +581,4 @@ setInterval(createHeart,350);
 
 </body>
 
-  
 </html>
