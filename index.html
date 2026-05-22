@@ -3,407 +3,618 @@
 
 <head>
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Happy Birthday Reah 🎂</title>
+<title>Happy Birthday Reah 🎂</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
 
-  <style>
+<style>
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
+:root{
+  --accent:#ff2d55;
+  --glass:rgba(255,255,255,0.08);
+  --border:rgba(255,255,255,0.12);
+}
 
-    body{
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-      background:black;
+body{
 
-      font-family:'Poppins', sans-serif;
+  background:black;
 
-      overflow:hidden;
+  overflow:hidden;
 
-      display:flex;
-      justify-content:center;
-      align-items:center;
+  font-family:'Montserrat',sans-serif;
 
-      height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
 
-      color:white;
+  height:100vh;
 
-    }
+  color:white;
 
-    .page{
+}
 
-      width:100vw;
-      height:100vh;
+/* MAIN PHONE SCREEN */
 
-      max-width:430px;
+.phone{
 
-      aspect-ratio:9/16;
+  width:100vw;
+  height:100vh;
 
-      display:none;
+  max-width:430px;
 
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
+  aspect-ratio:9/16;
 
-      text-align:center;
+  position:relative;
 
-      padding:30px;
+  overflow:hidden;
 
-      background-size:cover;
-      background-position:center;
+  border-radius:30px;
 
-      position:relative;
+  background:black;
 
-      overflow:hidden;
+  box-shadow:0 0 40px rgba(255,255,255,0.15);
 
-      border-radius:28px;
+}
 
-      animation:fade 0.8s ease;
+/* PAGES */
 
-      box-shadow:0 0 40px rgba(255,255,255,0.12);
+.page{
 
-    }
+  position:absolute;
 
-    .active{
-      display:flex;
-    }
+  inset:0;
 
-    .overlay{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
 
-      position:absolute;
-      inset:0;
+  padding:28px;
 
-      background:rgba(0,0,0,0.18);
+  text-align:center;
 
-    }
+  opacity:0;
+  visibility:hidden;
 
-    .content{
+  transition:1s;
 
-      position:relative;
-      z-index:2;
+  background-size:cover;
+  background-position:center;
 
-      background:rgba(0,0,0,0.18);
+}
 
-      padding:24px;
+.page.active{
 
-      border-radius:25px;
+  opacity:1;
+  visibility:visible;
 
-      backdrop-filter:blur(3px);
+}
 
-    }
+.overlay{
 
-    h1{
+  position:absolute;
+  inset:0;
 
-      font-size:48px;
+  background:rgba(0,0,0,0.35);
 
-      margin-bottom:20px;
+}
 
-      text-shadow:0 0 18px rgba(255,255,255,0.2);
+.content{
 
-    }
+  position:relative;
+  z-index:2;
 
-    p{
+  width:100%;
 
-      font-size:19px;
+  background:rgba(0,0,0,0.22);
 
-      line-height:1.8;
+  backdrop-filter:blur(10px);
 
-      color:#f5f5f5;
+  border:1px solid rgba(255,255,255,0.08);
 
-      max-width:320px;
+  border-radius:28px;
 
-    }
+  padding:28px;
 
-    button{
+}
 
-      margin-top:28px;
+/* TITLES */
 
-      padding:14px 34px;
+.hero-title{
 
-      border:none;
+  font-family:'Playfair Display',serif;
 
-      border-radius:40px;
+  font-size:52px;
 
-      background:white;
+  line-height:1.1;
 
-      color:black;
+  margin-bottom:16px;
 
-      font-size:15px;
+  background:linear-gradient(to right,#fff,#ff5f7a,#fff);
 
-      font-weight:600;
+  -webkit-background-clip:text;
 
-      cursor:pointer;
+  -webkit-text-fill-color:transparent;
 
-      transition:0.3s;
+}
 
-    }
+.hero-sub{
 
-    button:hover{
-      transform:scale(1.08);
-    }
+  font-size:15px;
 
-    img{
+  letter-spacing:3px;
 
-      width:250px;
-      height:420px;
+  opacity:0.8;
 
-      object-fit:cover;
+  margin-bottom:32px;
 
-      border-radius:22px;
+}
 
-      margin-bottom:20px;
+.step-text{
 
-      box-shadow:0 0 25px rgba(255,255,255,0.15);
+  font-size:28px;
 
-    }
+  line-height:1.5;
 
-    .cake{
+  margin-bottom:24px;
 
-      width:220px;
+  font-family:'Playfair Display',serif;
 
-      height:auto;
+}
 
-      margin-top:20px;
+/* BUTTON */
 
-      animation:float 3s ease-in-out infinite;
+.btn{
 
-    }
+  padding:15px 34px;
 
-    @keyframes fade{
+  border:none;
 
-      from{
-        opacity:0;
-        transform:scale(1.04);
-      }
+  border-radius:50px;
 
-      to{
-        opacity:1;
-        transform:scale(1);
-      }
+  background:var(--accent);
 
-    }
+  color:white;
 
-    @keyframes float{
+  font-weight:700;
 
-      0%{
-        transform:translateY(0px);
-      }
+  cursor:pointer;
 
-      50%{
-        transform:translateY(-10px);
-      }
+  font-size:15px;
 
-      100%{
-        transform:translateY(0px);
-      }
+  transition:0.3s;
 
-    }
+  box-shadow:0 0 20px rgba(255,45,85,0.4);
 
-  </style>
+}
+
+.btn:hover{
+  transform:scale(1.05);
+}
+
+/* HEARTS */
+
+.heart{
+
+  position:absolute;
+
+  bottom:-20px;
+
+  animation:float 6s linear forwards;
+
+  opacity:0.7;
+
+}
+
+@keyframes float{
+
+  0%{
+    transform:translateY(0) scale(0);
+    opacity:0;
+  }
+
+  20%{
+    opacity:0.8;
+  }
+
+  100%{
+    transform:translateY(-120vh) scale(1.5);
+    opacity:0;
+  }
+
+}
+
+/* FAIRY LIGHTS */
+
+.lights{
+
+  position:absolute;
+
+  top:0;
+
+  width:100%;
+
+  display:flex;
+
+  justify-content:space-around;
+
+  padding:14px;
+
+  z-index:2;
+
+}
+
+.bulb{
+
+  width:14px;
+  height:22px;
+
+  border-radius:50%;
+
+  background:#ffd86b;
+
+  box-shadow:0 0 15px #ffd86b;
+
+  animation:flicker 1s infinite alternate;
+
+}
+
+@keyframes flicker{
+
+  from{
+    opacity:0.7;
+  }
+
+  to{
+    opacity:1;
+  }
+
+}
+
+/* IMAGE */
+
+.photo-group{
+
+  display:flex;
+
+  gap:12px;
+
+  justify-content:center;
+
+  margin-bottom:20px;
+
+}
+
+.photo-group img{
+
+  width:120px;
+  height:240px;
+
+  object-fit:cover;
+
+  border-radius:20px;
+
+  box-shadow:0 0 20px rgba(255,255,255,0.15);
+
+}
+
+/* MESSAGE */
+
+.message{
+
+  font-size:17px;
+
+  line-height:1.9;
+
+  color:#f5f5f5;
+
+}
+
+/* GALLERY */
+
+.gallery{
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:14px;
+
+  margin-top:22px;
+
+}
+
+.gallery img{
+
+  width:100%;
+  height:210px;
+
+  object-fit:cover;
+
+  border-radius:18px;
+
+}
+
+/* CAKE */
+
+.cake{
+
+  width:220px;
+
+  margin-top:22px;
+
+  animation:bounce 3s infinite;
+
+}
+
+@keyframes bounce{
+
+  0%,100%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-10px);
+  }
+
+}
+
+</style>
 
 </head>
 
 <body>
 
-  <!-- MUSIC -->
+<div class="phone">
 
-  <audio id="bgmusic">
+<!-- MUSIC -->
 
-    <source src="https://cdn.discordapp.com/attachments/1507124665871503452/1507142863266381915/ABBA_-_Dancing_Queen_Official_Music_Video.mp3?ex=6a10d3ab&is=6a0f822b&hm=f86d2fc413ab524e3668a91346b12e22facf6f4fe7a42b9b3eb6bff2f26f64ab&" type="audio/mp3">
+<audio id="music" loop>
 
-  </audio>
+<source src="PUT-MUSIC-LINK-HERE" type="audio/mp3">
 
-  <!-- PAGE 1 -->
+</audio>
 
-  <div class="page active"
+<!-- FLOATING HEARTS -->
 
-  style="
-  background-image:
-  linear-gradient(rgba(0,0,0,0.08), rgba(0,0,0,0.2)),
-  url('https://media.discordapp.net/attachments/1507124665871503452/1507148738546634852/download.jpg?ex=6a10d924&is=6a0f87a4&hm=76da07f33b85f51bc6e4f550f12035249fdd86f775be23d7fbb3b110c51ef37d&=&format=webp&width=481&height=856');
-  ">
+<div id="hearts"></div>
 
-    <div class="overlay"></div>
+<!-- PAGE 1 -->
 
-    <div class="content">
+<section class="page active"
 
-      <h1>Happy Birthday Reah 🎂</h1>
+style="
+background-image:
+linear-gradient(rgba(0,0,0,0.15),rgba(0,0,0,0.4)),
+url('https://media.discordapp.net/attachments/1507124665871503452/1507148738546634852/download.jpg');
+">
 
-      <p>
+<div class="overlay"></div>
 
-        okay fine...<br>
-        this website is for you 😭
+<div class="lights">
 
-      </p>
+<div class="bulb"></div>
+<div class="bulb"></div>
+<div class="bulb"></div>
+<div class="bulb"></div>
+<div class="bulb"></div>
 
-      <button onclick="nextPage(1)">
-        Next →
-      </button>
+</div>
 
-    </div>
+<div class="content">
 
-  </div>
+<h1 class="hero-title">
+Happy Birthday Reah 🎂
+</h1>
 
-  <!-- PAGE 2 -->
+<p class="hero-sub">
+A LITTLE WEBSITE JUST FOR YOU
+</p>
 
-  <div class="page"
+<button class="btn" onclick="nextPage(1)">
+Open Your Gift
+</button>
 
-  style="
-  background-image:
-  linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.25)),
-  url('https://cdn.discordapp.com/attachments/1507124665871503452/1507150533159420129/download_4.jpg?ex=6a10dad0&is=6a0f8950&hm=20a4172bf91322941a07900e8a6535aa772d46f195b6abed285666c84082859c&');
-  ">
+</div>
 
-    <div class="overlay"></div>
+</section>
 
-    <div class="content">
+<!-- PAGE 2 -->
 
-      <img src="PUT-HER-FIRST-PIC-LINK">
+<section class="page"
 
-      <p>
+style="
+background-image:
+linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.5)),
+url('https://cdn.discordapp.com/attachments/1507124665871503452/1507150533159420129/download_4.jpg');
+">
 
-        caught lacking 💀
+<div class="overlay"></div>
 
-      </p>
+<div class="content">
 
-      <button onclick="nextPage(2)">
-        Next →
-      </button>
+<div class="photo-group">
 
-    </div>
+<img src="PUT-FIRST-IMAGE-LINK">
 
-  </div>
+<img src="PUT-SECOND-IMAGE-LINK">
 
-  <!-- PAGE 3 -->
+</div>
 
-  <div class="page"
+<p class="step-text">
+caught lacking 💀
+</p>
 
-  style="
-  background-image:
-  linear-gradient(rgba(0,0,0,0.12), rgba(0,0,0,0.3)),
-  url('https://cdn.discordapp.com/attachments/1507124665871503452/1507150846217945179/download_5.jpg?ex=6a10db1b&is=6a0f899b&hm=52a2718e2fa7abc4af088ed0e4d4266da195c1c23edefe14ff2150ec5775884a&');
-  ">
+<button class="btn" onclick="nextPage(2)">
+Next
+</button>
 
-    <div class="overlay"></div>
+</div>
 
-    <div class="content">
+</section>
 
-      <h1>💀</h1>
+<!-- PAGE 3 -->
 
-      <p>
+<section class="page"
 
-        professional yapper.<br>
-        dramatic for no reason.<br>
-        still one of my favorite people.
+style="
+background-image:
+linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.55)),
+url('https://cdn.discordapp.com/attachments/1507124665871503452/1507150846217945179/download_5.jpg');
+">
 
-      </p>
+<div class="overlay"></div>
 
-      <button onclick="nextPage(3)">
-        Next →
-      </button>
+<div class="content">
 
-    </div>
+<p class="step-text">
 
-  </div>
+professional yapper.<br>
+dramatic for no reason.<br>
+still one of my favorite people.
 
-  <!-- PAGE 4 -->
+</p>
 
-  <div class="page"
+<button class="btn" onclick="nextPage(3)">
+Let's Decorate 🎈
+</button>
 
-  style="
-  background-image:
-  linear-gradient(rgba(0,0,0,0.12), rgba(0,0,0,0.28)),
-  url('https://cdn.discordapp.com/attachments/1507124665871503452/1507151199822938232/download_6.jpg?ex=6a10db6f&is=6a0f89ef&hm=75644dc57017e83474c2647e8cf01dfaf6123d48fa9aeb67e87ee1b305d965b3&');
-  ">
+</div>
 
-    <div class="overlay"></div>
+</section>
 
-    <div class="content">
+<!-- PAGE 4 -->
 
-      <img src="PUT-HER-SECOND-PIC-LINK">
+<section class="page"
 
-      <p>
+style="
+background-image:
+linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.55)),
+url('https://cdn.discordapp.com/attachments/1507124665871503452/1507151199822938232/download_6.jpg');
+">
 
-        don’t let this website make you think<br>
-        I’m nice now 😭
+<div class="overlay"></div>
 
-      </p>
+<div class="lights">
 
-      <button onclick="nextPage(4)">
-        Final Page →
-      </button>
+<div class="bulb"></div>
+<div class="bulb"></div>
+<div class="bulb"></div>
+<div class="bulb"></div>
+<div class="bulb"></div>
 
-    </div>
+</div>
 
-  </div>
+<div class="content">
 
-  <!-- PAGE 5 -->
+<p class="step-text">
+turn on the music 🎵
+</p>
 
-  <div class="page"
+<button class="btn" onclick="playMusicAndNext()">
+Play Music
+</button>
 
-  style="
-  background-image:
-  linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.15)),
-  url('https://cdn.discordapp.com/attachments/1507124665871503452/1507150139796754482/download_3.jpg?ex=6a118332&is=6a1031b2&hm=ba228b1e380d1ad31ad7f503ba133a4e858348f9fb9efea22cd4251453446779&');
-  ">
+</div>
 
-    <div class="overlay"></div>
+</section>
 
-    <div class="content">
+<!-- PAGE 5 -->
 
-      <h1>Sweet 16 🎀</h1>
+<section class="page"
 
-      <p>
+style="
+background-image:
+linear-gradient(rgba(0,0,0,0.15),rgba(0,0,0,0.4)),
+url('https://cdn.discordapp.com/attachments/1507124665871503452/1507150139796754482/download_3.jpg');
+">
 
-        jokes aside...<br><br>
+<div class="overlay"></div>
 
-        i genuinely hope this year gives you<br>
-        the best memories,<br>
-        the best people,<br>
-        and lots of reasons to smile.<br><br>
+<div class="content">
 
-        thank you for being part of my life :)<br><br>
+<h1 class="hero-title">
+Sweet 16 🎀
+</h1>
 
-        stay happy and stay annoying 💀
+<p class="message">
 
-      </p>
+jokes aside...<br><br>
 
-      <img class="cake"
-      src="https://media.tenor.com/z8E3QbKhdosAAAAi/birthday-cake.gif">
+i genuinely hope this year gives you<br>
+the best memories,<br>
+the best people,<br>
+and lots of reasons to smile.<br><br>
 
-    </div>
+thank you for being part of my life :)<br><br>
 
-  </div>
+stay happy and stay annoying 💀
 
-  <script>
+</p>
 
-    function nextPage(current){
+<img class="cake"
+src="https://media.tenor.com/z8E3QbKhdosAAAAi/birthday-cake.gif">
 
-      let pages = document.querySelectorAll(".page");
+</div>
 
-      pages[current - 1].classList.remove("active");
+</section>
 
-      pages[current].classList.add("active");
+</div>
 
-      // PLAY MUSIC ON FINAL PAGE
+<script>
 
-      if(current === 4){
+const pages=document.querySelectorAll(".page");
 
-        let music = document.getElementById("bgmusic");
+function nextPage(page){
 
-        music.play();
+pages.forEach(p=>p.classList.remove("active"));
 
-      }
+pages[page].classList.add("active");
 
-    }
+}
 
-  </script>
+function playMusicAndNext(){
+
+document.getElementById("music").play();
+
+nextPage(4);
+
+}
+
+/* HEARTS */
+
+function createHeart(){
+
+const heart=document.createElement("div");
+
+heart.classList.add("heart");
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"%";
+
+heart.style.fontSize=(Math.random()*20+10)+"px";
+
+document.getElementById("hearts").appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},6000);
+
+}
+
+setInterval(createHeart,350);
+
+</script>
 
 </body>
 
