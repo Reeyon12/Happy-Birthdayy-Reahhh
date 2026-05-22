@@ -21,16 +21,32 @@
     }
 
     body{
+
+      background:#000;
       font-family:'Poppins', sans-serif;
+
       overflow:hidden;
-      background:black;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      height:100vh;
+
       color:white;
+
     }
 
     .page{
 
-      width:100%;
+      width:100vw;
       height:100vh;
+
+      max-width:430px;
+
+      aspect-ratio:9/16;
+
+      margin:auto;
 
       display:none;
 
@@ -45,9 +61,15 @@
       background-size:cover;
       background-position:center;
 
-      animation:fade 1s ease;
-
       position:relative;
+
+      border-radius:28px;
+
+      overflow:hidden;
+
+      box-shadow:0 0 40px rgba(255,255,255,0.15);
+
+      animation:fade 0.8s ease;
 
     }
 
@@ -60,18 +82,20 @@
       position:absolute;
       inset:0;
 
-      background:rgba(0,0,0,0.45);
+      background:rgba(0,0,0,0.35);
 
     }
 
     .content{
+
       position:relative;
       z-index:2;
+
     }
 
     h1{
 
-      font-size:65px;
+      font-size:48px;
       margin-bottom:20px;
 
       text-shadow:0 0 20px rgba(255,255,255,0.25);
@@ -80,18 +104,19 @@
 
     p{
 
-      font-size:22px;
+      font-size:19px;
+
       line-height:1.8;
 
-      max-width:700px;
+      color:#f5f5f5;
 
-      color:#f1f1f1;
+      max-width:320px;
 
     }
 
     button{
 
-      margin-top:35px;
+      margin-top:30px;
 
       padding:14px 34px;
 
@@ -101,7 +126,7 @@
       background:white;
       color:black;
 
-      font-size:16px;
+      font-size:15px;
       font-weight:600;
 
       cursor:pointer;
@@ -116,13 +141,35 @@
 
     img{
 
-      width:300px;
+      width:250px;
 
-      border-radius:25px;
+      border-radius:22px;
 
-      margin-top:25px;
+      margin-bottom:20px;
 
-      box-shadow:0 0 25px rgba(255,255,255,0.1);
+      box-shadow:0 0 25px rgba(255,255,255,0.15);
+
+    }
+
+    video{
+
+      width:260px;
+
+      border-radius:22px;
+
+      margin-bottom:20px;
+
+      box-shadow:0 0 25px rgba(255,255,255,0.15);
+
+    }
+
+    .cake{
+
+      width:220px;
+
+      margin-top:20px;
+
+      animation:float 3s ease-in-out infinite;
 
     }
 
@@ -130,12 +177,28 @@
 
       from{
         opacity:0;
-        transform:scale(1.03);
+        transform:scale(1.04);
       }
 
       to{
         opacity:1;
         transform:scale(1);
+      }
+
+    }
+
+    @keyframes float{
+
+      0%{
+        transform:translateY(0px);
+      }
+
+      50%{
+        transform:translateY(-10px);
+      }
+
+      100%{
+        transform:translateY(0px);
       }
 
     }
@@ -148,16 +211,19 @@
 
   <!-- MUSIC -->
 
-  <audio id="bgmusic" loop>
+  <audio id="bgmusic">
+
     <source src="https://cdn.discordapp.com/attachments/1507124665871503452/1507142863266381915/ABBA_-_Dancing_Queen_Official_Music_Video.mp3?ex=6a10d3ab&is=6a0f822b&hm=f86d2fc413ab524e3668a91346b12e22facf6f4fe7a42b9b3eb6bff2f26f64ab&" type="audio/mp3">
+
   </audio>
 
   <!-- PAGE 1 -->
 
   <div class="page active"
+
   style="
   background-image:
-  linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.55)),
+  linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.45)),
   url('https://media.discordapp.net/attachments/1507124665871503452/1507148738546634852/download.jpg?ex=6a10d924&is=6a0f87a4&hm=76da07f33b85f51bc6e4f550f12035249fdd86f775be23d7fbb3b110c51ef37d&=&format=webp&width=481&height=856');
   ">
 
@@ -185,9 +251,10 @@
   <!-- PAGE 2 -->
 
   <div class="page"
+
   style="
   background-image:
-  linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.6)),
+  linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.5)),
   url('https://cdn.discordapp.com/attachments/1507124665871503452/1507150533159420129/download_4.jpg?ex=6a10dad0&is=6a0f8950&hm=20a4172bf91322941a07900e8a6535aa772d46f195b6abed285666c84082859c&');
   ">
 
@@ -195,7 +262,9 @@
 
     <div class="content">
 
-      <img src="YOUR-IMAGE-LINK">
+      <!-- PUT HER PIC HERE -->
+
+      <img src="PUT-HER-PIC-LINK-HERE">
 
       <p>
 
@@ -214,9 +283,10 @@
   <!-- PAGE 3 -->
 
   <div class="page"
+
   style="
   background-image:
-  linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.65)),
+  linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.55)),
   url('https://cdn.discordapp.com/attachments/1507124665871503452/1507150846217945179/download_5.jpg?ex=6a10db1b&is=6a0f899b&hm=52a2718e2fa7abc4af088ed0e4d4266da195c1c23edefe14ff2150ec5775884a&');
   ">
 
@@ -245,9 +315,10 @@
   <!-- PAGE 4 -->
 
   <div class="page"
+
   style="
   background-image:
-  linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.65)),
+  linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.6)),
   url('https://cdn.discordapp.com/attachments/1507124665871503452/1507151199822938232/download_6.jpg?ex=6a10db6f&is=6a0f89ef&hm=75644dc57017e83474c2647e8cf01dfaf6123d48fa9aeb67e87ee1b305d965b3&');
   ">
 
@@ -255,11 +326,13 @@
 
     <div class="content">
 
-      <img src="YOUR-IMAGE-LINK">
+      <!-- PUT ANOTHER PIC HERE -->
+
+      <img src="PUT-SECOND-PIC-LINK-HERE">
 
       <p>
 
-        don’t let this website make you think
+        don’t let this website make you think<br>
         I’m nice now 😭
 
       </p>
@@ -275,25 +348,38 @@
   <!-- PAGE 5 -->
 
   <div class="page"
+
   style="
   background-image:
-  linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.7)),
-  url('https://cdn.discordapp.com/attachments/1507124665871503452/1507150139796754482/download_3.jpg?ex=6a10da72&is=6a0f88f2&hm=95ffd5d0735167d46d42cc156ad1f0011e10e535ed8c3c1e03a0d18ab75d0939&t');
+  linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.35)),
+  url('https://images.unsplash.com/photo-1513151233558-d860c5398176?q=80&w=1974&auto=format&fit=crop');
   ">
 
     <div class="overlay"></div>
 
     <div class="content">
 
-      <h1>Anyways... 🎂</h1>
+      <h1>Sweet 16 🎀</h1>
 
       <p>
 
-        jokes aside,<br><br>
+        jokes aside...<br><br>
 
-        PUT-YOUR-WHOLESOME-MESSAGE-HERE
+        I genuinely hope this year gives you<br>
+        the best memories,<br>
+        the best people,<br>
+        and lots of reasons to smile.<br><br>
+
+        thank you for being part of my life :)<br><br>
+
+        stay happy and stay annoying 💀
 
       </p>
+
+      <!-- CAKE GIF -->
+
+      <img class="cake"
+      src="https://media.tenor.com/z8E3QbKhdosAAAAi/birthday-cake.gif">
 
     </div>
 
@@ -309,7 +395,7 @@
 
       pages[current].classList.add("active");
 
-      // PLAY MUSIC ON FINAL PAGE
+      // PLAY MUSIC ON LAST PAGE
 
       if(current === 4){
 
