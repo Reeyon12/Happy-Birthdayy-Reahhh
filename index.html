@@ -343,11 +343,9 @@ body{
 
 <div class="phone">
 
-<!-- MUSIC -->
+<audio id="music" loop>
 
-<audio id="music" loop preload="auto">
-
-<source src="https://cdn.discordapp.com/attachments/1507124665871503452/1507142863266381915/ABBA_-_Dancing_Queen_Official_Music_Video.mp3?ex=6a117c6b&is=6a102aeb&hm=4cda2fd1430badbbc00a0a216a83c6fe18405e89ff4ea9ecffd56fbaecd647c3&" type="audio/mpeg">
+<source src="https://files.catbox.moe/gs5yg3.mp3" type="audio/mpeg">
 
 </audio>
 
@@ -417,7 +415,7 @@ url('https://cdn.discordapp.com/attachments/1507124665871503452/1507150533159420
 
 <p class="step-text">
 Y are u soo gayy ? 🤔
-  but ha nvm
+but ha nvm
 </p>
 
 <button class="btn" onclick="nextPage(2)">
@@ -536,7 +534,7 @@ src="https://media.tenor.com/z8E3QbKhdosAAAAi/birthday-cake.gif">
 
 </div>
 
-  <script>
+<script>
 
 const pages = document.querySelectorAll(".page");
 
@@ -562,9 +560,9 @@ async function startMusic(){
 
   try{
 
-    music.loop = true;
-
     music.volume = 1;
+
+    music.loop = true;
 
     await music.play();
 
@@ -574,15 +572,13 @@ async function startMusic(){
 
   catch(error){
 
-    console.error(error);
+    console.log(error);
 
     alert("Tap again if music doesn't start 🎵");
 
   }
 
 }
-
-/* FLOATING HEARTS */
 
 function createHeart(){
 
@@ -608,4 +604,6 @@ setInterval(createHeart, 350);
 
 </script>
 
+</body>
 
+</html>
