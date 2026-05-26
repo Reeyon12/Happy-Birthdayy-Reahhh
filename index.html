@@ -8,12 +8,13 @@
 
 <title>Happy Birthday Reah 🎂</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
 
 <style>
 
 :root{
   --accent:#ff2d55;
+  --bg-dark:#000;
   --glass:rgba(0,0,0,0.22);
   --border:rgba(255,255,255,0.08);
 }
@@ -31,15 +32,15 @@ html,body{
 
 body{
 
-  background:black;
+  background:var(--bg-dark);
+
+  overflow:hidden;
 
   font-family:'Montserrat',sans-serif;
 
   display:flex;
   justify-content:center;
   align-items:center;
-
-  overflow:hidden;
 
   color:white;
 
@@ -56,13 +57,13 @@ body{
 
   max-width:430px;
 
+  aspect-ratio:9/16;
+
+  overflow:hidden;
+
   background:black;
 
-  box-shadow:0 0 40px rgba(255,255,255,0.12);
-
-  overflow-y:auto;
-
-  overflow-x:hidden;
+  box-shadow:0 0 40px rgba(255,255,255,0.15);
 
 }
 
@@ -93,9 +94,7 @@ body{
 
   transform:scale(1.03);
 
-  overflow-y:auto;
-
-  -webkit-overflow-scrolling:touch;
+  
 
 }
 
@@ -108,8 +107,6 @@ body{
 
 }
 
-/* OVERLAY */
-
 .overlay{
 
   position:absolute;
@@ -120,8 +117,6 @@ body{
 
 }
 
-/* CONTENT */
-
 .content{
 
   position:relative;
@@ -130,75 +125,49 @@ body{
 
   width:100%;
 
-  max-width:360px;
+  padding:20px;
 
-  padding:18px;
+  border-radius:20px;
 
-  margin:80px 0 40px 0;
-
-  border-radius:24px;
-
-  background:rgba(0,0,0,0.28);
+  background:var(--glass);
 
   backdrop-filter:blur(10px);
 
-  border:1px solid rgba(255,255,255,0.08);
+  border:1px solid var(--border);
 
 }
+
 /* TITLE */
 
 .hero-title{
 
   font-family:'Playfair Display',serif;
 
-  font-size:30px;
+  font-size:52px;
 
-  line-height:1.1;
+  line-height:0.95;
 
-  margin-bottom:10px;
+  margin-bottom:5px;
 
   background:linear-gradient(to right,#fff,#ff5f7a,#fff);
 
+  background-clip:text;
   -webkit-background-clip:text;
 
+  color:transparent;
   -webkit-text-fill-color:transparent;
 
-}
 }
 
 .hero-sub{
 
-  font-size:14px;
+  font-size:15px;
 
   letter-spacing:3px;
 
   opacity:0.8;
 
-  margin-bottom:28px;
-
-}
-
-/* TEXT */
-
-.step-text{
-
-  font-family:'Playfair Display',serif;
-
-  font-size:24px;
-
-  line-height:1.5;
-
-  margin-bottom:22px;
-
-}
-
-.message{
-
-  font-size:15px;
-
-  line-height:1.7;
-
-  color:#f5f5f5;
+  margin-bottom:30px;
 
 }
 
@@ -206,7 +175,7 @@ body{
 
 .btn{
 
-  padding:14px 32px;
+  padding:15px 34px;
 
   border:none;
 
@@ -242,7 +211,7 @@ body{
 
   justify-content:center;
 
-  gap:10px;
+  gap:12px;
 
   margin-bottom:20px;
 
@@ -250,14 +219,38 @@ body{
 
 .photo-group img{
 
-  width:100px;
-  height:200px;
+  width:120px;
+  height:240px;
 
   object-fit:cover;
 
   border-radius:18px;
 
   box-shadow:0 0 20px rgba(255,255,255,0.15);
+
+}
+
+/* TEXT */
+
+.step-text{
+
+  font-family:'Playfair Display',serif;
+
+  font-size:26px;
+
+  line-height:1.6;
+
+  margin-bottom:22px;
+
+}
+
+.message{
+
+  font-size:17px;
+
+  line-height:1.9;
+
+  color:#f5f5f5;
 
 }
 
@@ -338,105 +331,13 @@ body{
 
 }
 
-/* GOOFY COLLAGE */
-
-.random-goofy{
-
-  position:relative;
-
-  width:100%;
-
-  height:230px;
-
-  margin-top:20px;
-
-}
-
-.goofy{
-
-  position:absolute;
-
-  width:60px;
-
-  height:85px;
-
-  object-fit:cover;
-
-  border-radius:14px;
-
-  border:2px solid rgba(255,255,255,0.18);
-
-  box-shadow:0 0 14px rgba(255,255,255,0.15);
-
-  background:rgba(255,255,255,0.05);
-
-  padding:2px;
-
-  animation:floatPic 4s ease-in-out infinite;
-
-}
-
-.g1{
-  top:0;
-  left:0;
-  transform:rotate(-8deg);
-}
-
-.g2{
-  top:10px;
-  right:0;
-  transform:rotate(7deg);
-}
-
-.g3{
-  top:75px;
-  left:20px;
-  transform:rotate(-5deg);
-}
-
-.g4{
-  top:85px;
-  right:20px;
-  transform:rotate(8deg);
-}
-
-.g5{
-  bottom:0;
-  left:55px;
-  transform:rotate(-10deg);
-}
-
-.g6{
-  bottom:10px;
-  right:55px;
-  transform:rotate(8deg);
-}
-
-.g7{
-  top:40px;
-  left:110px;
-  transform:rotate(-4deg);
-}
-
-@keyframes floatPic{
-
-  0%,100%{
-    transform:translateY(0px);
-  }
-
-  50%{
-    transform:translateY(-8px);
-  }
-
-}
-
 /* CAKE */
 
 .cake{
 
-  width:170px;
+  width:150px;
 
-  margin-top:18px;
+  margin-top:10px;
 
   animation:bounce 3s infinite;
 
@@ -454,24 +355,134 @@ body{
 
 }
 
+/* RANDOM GOOFY PICS */
+
+.random-goofy{
+
+  position:relative;
+
+  width:100%;
+
+  height:250px;
+
+  margin-top:16px;
+  overflow:hidden;
+
+}
+
+.goofy{
+
+  position:absolute;
+
+  width:64px;
+
+  height:92px;
+
+  object-fit:cover;
+
+  border-radius:16px;
+
+  border:2px solid rgba(255,255,255,0.18);
+
+  box-shadow:0 0 16px rgba(255,255,255,0.15);
+
+  background:rgba(255,255,255,0.05);
+
+  padding:3px;
+
+  animation:floatPic 4s ease-in-out infinite;
+
+}
+
+/* POSITIONS */
+.g1{
+  top:0;
+  left:0;
+  transform:rotate(-10deg);
+}
+
+.g2{
+  top:10px;
+  right:0;
+  transform:rotate(8deg);
+}
+
+.g3{
+  top:85px;
+  left:8px;
+  transform:rotate(-6deg);
+}
+
+.g4{
+  top:92px;
+  right:10px;
+  transform:rotate(10deg);
+}
+
+.g5{
+  bottom:0;
+  left:38px;
+  transform:rotate(-12deg);
+}
+
+.g6{
+  bottom:0;
+  right:38px;
+  transform:rotate(9deg);
+}
+
+.g7{
+  top:48px;
+  left:50%;
+  margin-left:-32px; /* half of width */
+  transform:rotate(-4deg);
+}
+@keyframes floatPic{
+
+  0%,100%{
+    translate:0 0;
+  }
+
+  50%{
+    translate:0 -10px;
+  }
+
+}
+
 /* MOBILE */
 
 @media(max-width:480px){
 
   .hero-title{
-    font-size:34px;
+    font-size:42px;
   }
 
   .step-text{
-    font-size:20px;
-  }
-
-  .message{
-    font-size:14px;
+    font-size:22px;
   }
 
 }
+.page:last-child{
 
+  justify-content:flex-start;
+
+  padding-top:40px;
+
+  overflow-y:auto;
+
+}
+.page:last-child .content{
+
+  padding-top:16px;
+
+  padding-bottom:16px;
+
+}
+.page:last-child .message{
+
+  line-height:1.6;
+
+}
 </style>
 
 </head>
@@ -544,14 +555,14 @@ url('https://cdn.discordapp.com/attachments/1507124665871503452/1507150533159420
 
 <div class="photo-group">
 
-<img src="https://media.discordapp.net/attachments/1507124665871503452/1507131085224546506/Screenshot_2026-05-22_024705.png">
+<img src="https://media.discordapp.net/attachments/1507124665871503452/1507131085224546506/Screenshot_2026-05-22_024705.png?ex=6a16b773&is=6a1565f3&hm=ee0f71e450f14155a1f3bae75e50e2217c94fb5b9e75956ed75cad9d3aed3df9&=&format=webp&quality=lossless">
 
-<img src="https://media.discordapp.net/attachments/1507124665871503452/1507131085618679981/Screenshot_2026-05-22_024533.png">
+<img src="https://media.discordapp.net/attachments/1507124665871503452/1507131085618679981/Screenshot_2026-05-22_024533.png?ex=6a16b773&is=6a1565f3&hm=a037ae474b969ad2f44e087a0b3372d197757657bdb3294af36386c81cd2965a&=&format=webp&quality=lossless">
 
 </div>
 
 <p class="step-text">
-Y are u soo gayy ? 🤔
+Y are u soo gayy ? 🤔<br>
 </p>
 
 <button class="btn" onclick="nextPage(2)">
@@ -640,6 +651,7 @@ url('https://cdn.discordapp.com/attachments/1507124665871503452/1507150139796754
 
 <div class="overlay"></div>
 
+
 <div class="content">
 
 <h1 class="hero-title">
@@ -650,33 +662,34 @@ Sweet 16 🎀
 
 jokes aside...<br><br>
 
-i genuinely hope this year gives you
-the best memories,
-the best people,
-and lots of reasons to smile.<br><br>
+i genuinely hope this year gives you the best memories,<br>
+the best people, and lots of reasons to smile.<br><br>
 
 thank you for being part of my life :)<br><br>
 
-stay happy and stay annoying and gayyy alwaysss 😭🎀
+stay happy and stay annoying and gayyy alwaysss 😍😍
 
 </p>
 
+
+<!-- RANDOM GOOFY PICS -->
+
 <div class="random-goofy">
 
-<img class="goofy g1" src="https://media.discordapp.net/attachments/1507124665871503452/1507131086889811978/IMG_20251224_230904_532.jpg">
+<img class="goofy g1" src="https://media.discordapp.net/attachments/1507124665871503452/1507131086889811978/IMG_20251224_230904_532.jpg?ex=6a16b774&is=6a1565f4&hm=a4a0de1b656e45a0abd5d85c702bac4d5c7aa9809fb0d6f4d450f24042243716&=&format=webp">
 
-<img class="goofy g2" src="https://media.discordapp.net/attachments/1507124665871503452/1507131087233749072/IMG_20251212_173513_180.jpg">
+<img class="goofy g2" src="https://media.discordapp.net/attachments/1507124665871503452/1507131087233749072/IMG_20251212_173513_180.jpg?ex=6a16b774&is=6a1565f4&hm=a6b20f5ebfae1b85e22c5fa41da643eb3af5a9a6d6eb0dd5a36a601a5a22b881&=&format=webp&width=682&height=856">
 
-<img class="goofy g3" src="https://media.discordapp.net/attachments/1507124665871503452/1507478952766345388/584056963_17940955545086568_997381111893727816_n.png">
+<img class="goofy g3" src="https://media.discordapp.net/attachments/1507124665871503452/1507478952766345388/584056963_17940955545086568_997381111893727816_n.png?ex=6a16a9ed&is=6a15586d&hm=895746a33a3032437b13d170d2316e6daded71e22b85b5fd1e2f4d5f0a78004f&=&format=webp&quality=lossless&width=645&height=856">
 
-<img class="goofy g4" src="https://media.discordapp.net/attachments/1507124665871503452/1507478953525514280/601789014_17875933584453891_1705074228126984006_n.png">
+<img class="goofy g4" src="https://media.discordapp.net/attachments/1507124665871503452/1507478953525514280/601789014_17875933584453891_1705074228126984006_n.png?ex=6a16a9ee&is=6a15586e&hm=8815eac64264a45be3e2d767d0176b410fc29c48838607dc0cb2505359a4fd5f&=&format=webp&quality=lossless">
+  
+<img class="goofy g5" src="https://media.discordapp.net/attachments/1507124665871503452/1507478953248555018/Screenshot_2026-05-23_015123.png?ex=6a16a9ee&is=6a15586e&hm=e7a00d6d0ca02549209a8f851ea8f559e55f298b211eae311dbb53a303d4ed34&=&format=webp&quality=lossless">
 
-<img class="goofy g5" src="https://media.discordapp.net/attachments/1507124665871503452/1507478953248555018/Screenshot_2026-05-23_015123.png">
+<img class="goofy g6" src="https://media.discordapp.net/attachments/1507124665871503452/1507131086201684049/Screenshot_2026-05-22_024510.png?ex=6a16b774&is=6a1565f4&hm=bd2e8bec09a0caea945f09c500cca05b2512f548d4ff17bb15fb022dbbc8ba2b&=&format=webp&quality=lossless">
 
-<img class="goofy g6" src="https://media.discordapp.net/attachments/1507124665871503452/1507131086201684049/Screenshot_2026-05-22_024510.png">
-
-<img class="goofy g7" src="https://media.discordapp.net/attachments/1507124665871503452/1507477689009836153/WhatsApp_Image_2026-05-23_at_1.43.08_AM.jpeg">
-
+<img class="goofy g7" src="https://media.discordapp.net/attachments/1507124665871503452/1507477689009836153/WhatsApp_Image_2026-05-23_at_1.43.08_AM.jpeg?ex=6a16a8c0&is=6a155740&hm=a056040ef40bf6e5227cccbd9f9766a0781edf1bf4cfe7990d94c92f4a1bb3d1&=&format=webp&width=765&height=959">
+  
 </div>
 
 <img class="cake"
